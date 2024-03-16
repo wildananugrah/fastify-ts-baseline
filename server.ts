@@ -1,12 +1,8 @@
 import path from "path";
-import { appHost, appPort, appEnv } from "./src/configs/common.config";
-import { fileURLToPath } from "url";
+import { appEnv, appHost, appPort } from "./src/configs/common.config";
 
 import fastify from "fastify";
 const app = fastify({ logger: appEnv === "development" ? true : false });
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // register cors plugin
 import cors from "@fastify/cors";
